@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <div id="app">
+        <!-- inline handler -->
+        <button v-on:click="count--">-</button>
+        {{ count }}
+        <button v-on:click="count++">+</button>
+
+        <br><br>
+        <button @click="count2--">-</button>
+        {{ count2 }}
+        <button @click="count2++">+</button>
+        <br><br>
+
+        <!-- handler -->
+        <button @click="mengurangi">-</button>
+        {{ count3 }}
+        <button @click="menambah">+</button>
+
+        <br><br>
+        <button @click="sayHello('saya eki')">say hello</button>
+
+        <br><br>
+        <input type="text" v-on:keydown.enter="sayHello('saya eki')">
+        <br><br>
+        <input type="text" @keydown.enter="sayHello('saya eki')">
+
+        <br><br>
+        <form action="" method="post" @submit.prevent>
+            <input type="text" name="" id="">
+            <input type="submit" name="" value="send" id="">
+        </form>
+    </div>
+
+    <script type="module">
+        import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+            createApp({
+                data() {
+                    return {
+                        count: 0,
+                        count2: 0,
+                        count3: 0
+                    }
+                },
+                methods: {
+                    mengurangi() {
+                        this.count3--
+                    },
+                    menambah() {
+                        this.count3++
+                    },
+                    sayHello(whatever) {
+                        alert('halo ' + whatever)
+                    }
+                }
+            }).mount('#app')
+    </script>
+</body>
+</html>

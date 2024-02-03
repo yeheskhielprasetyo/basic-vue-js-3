@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <div id="app">
+        <!-- if else -->
+        <div class="" v-if="tampil">
+            {{ message }}
+        </div>
+        <div class="" v-else=>
+            message tidak ditampilkan
+        </div>
+
+        <div class="" v-if="nilai >= 8">
+            predikat A
+        </div>
+
+        <div class="" v-else-if="nilai <= 8 && nilai >= 6">
+            predikat B
+        </div>
+
+        <div class="" v-else>
+            predikat C
+        </div>
+
+        <!-- v-show -->
+        
+    </div>
+
+    <script type="module">
+        import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+            createApp({
+                data() {
+                    return {
+                            message : 'hello world',
+                            tampil : true,
+                            nilai: 9,
+                    }
+                },
+            }).mount('#app')
+    </script>
+</body>
+</html>
